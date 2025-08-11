@@ -1,10 +1,7 @@
 # 💰 Expense Manager
 
-A full-featured **Expense Management System** that helps users track shared expenses, manage group spending, and settle balances. Built with **Java Spring Boot** (backend) and **ReactJS + Bootstrap** (frontend).
+A full-featured **Expense Management System** that helps users track shared expenses, manage group spending, and settle balances. Built with **Java Spring Boot** (backend) and **ReactJS** (frontend).
 
-🎥 [Project Walkthrough Video](https://www.loom.com/share/6ac9cfaff25e4aef93bc96f346fab43d?sid=25c91a25-33e4-4993-a231-86a5370ed3f8)
-
----
 
 ## 🌟 Features
 
@@ -14,7 +11,6 @@ A full-featured **Expense Management System** that helps users track shared expe
 - 📧 Email notifications (e.g., invites, settlements)
 - 📊 Reports and insights (with export options)
 - 🗂️ Role-based UI (admin, members)
-- 🎯 Responsive UI with Bootstrap
 - 📆 Pending invites, attendance logs, activity logs
 
 ---
@@ -27,19 +23,16 @@ A full-featured **Expense Management System** that helps users track shared expe
 - Spring Security + JWT
 - JPA (Hibernate)
 - Oracle SQL
-- Thymeleaf (for email templates)
 
 ### Frontend:
-- ReactJS (Bootstrap 5)
-- Axios
-- Toast notifications
-- React Router
+- ReactJS 
+
 
 ---
 
 ## 🧱 Database Schema
 
-Ensure you're using **Oracle SQL** and create the following tables before running the application. These SQL commands reflect the correct parent-child relationships:
+Ensure you're using **MySQL** and create the following tables before running the application. These SQL commands reflect the correct parent-child relationships:
 
 ```sql
 -- Create User Table
@@ -105,28 +98,7 @@ CREATE TABLE settlements (
     FOREIGN KEY (receiver_id) REFERENCES users(id),
     FOREIGN KEY (group_id) REFERENCES groups(id)
 );
-```
 
----
-
-## 🧑‍💻 Getting Started
-
-### 1. Clone the Repo
-
-```bash
-git clone https://github.com/your-username/expense-manager.git
-cd expense-manager
-```
-
-### 2. Backend Setup
-
-```bash
-cd backend
-```
-
-- Import the project into **Spring Tool Suite** or **IntelliJ**
-- Set Oracle DB credentials in `application.properties`
-- Run the Spring Boot application (`ExpenseBackendApplication.java`)
 
 ### 3. Frontend Setup
 
@@ -140,61 +112,3 @@ Make sure the backend is running on `http://localhost:8080`.
 
 ---
 
-## 🔐 Default Admin Credentials
-
-You can hardcode or seed an initial admin user directly into your database for testing.
-
-```sql
-INSERT INTO users (name, email, password, role)
-VALUES ('Admin', 'admin@example.com', 'hashed-password-here', 'ADMIN');
-```
-
-Make sure you hash the password using your Spring Security configuration.
-
----
-
-## 📂 Folder Structure
-
-```
-📦 backend/
- ┣ 📂 controller/
- ┣ 📂 model/
- ┣ 📂 repository/
- ┣ 📂 service/
- ┗ 📜 application.properties
-
-📦 frontend/
- ┣ 📂 src/
- ┃ ┣ 📂 pages/
- ┃ ┣ 📂 components/
- ┃ ┗ 📜 App.jsx
-```
-
----
-
-## ✅ To-Do (For Future Improvement)
-
-- Add pagination to expenses
-- Enable file attachments for bills
-- Add charts in reports
-- Dockerize the project
-- Unit and integration tests
-
----
-
-## 🙌 Acknowledgements
-
-Thanks to **OpenAI** for help with guidance during the build.  
-This project was developed as part of a learning journey to master **Spring Boot** and **ReactJS**.
-
----
-
-## 📽️ Demo Video
-
-👉 [Click to Watch on Loom](https://www.loom.com/share/6ac9cfaff25e4aef93bc96f346fab43d?sid=25c91a25-33e4-4993-a231-86a5370ed3f8)
-
----
-
-## 📜 License
-
-This project is open-source and available under the [MIT License](LICENSE).
